@@ -1,0 +1,13 @@
+name: zhen_xiang
+version: 0.1.0-dev
+
+authors:
+  - Hentioe <me@bluerain.io>
+
+targets:
+  zhen_xiang:
+    main: src/zhen_xiang.cr
+
+crystal: 0.28.0
+
+license: MIT
