@@ -11,3 +11,7 @@ targets:
 crystal: 0.28.0
 
 license: MIT
+
+dependencies:
+  crinja:
+    github: straight-shoota/crinja

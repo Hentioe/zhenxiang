@@ -6,4 +6,16 @@ describe ZhenXiang do
   it "works" do
     true.should eq(true)
   end
+
+  it "generate demo" do
+    tpl = ZhenXiang::Template.new "demo/template.mp4", "demo/template.ass"
+    subtitles = [
+      "我王竞泽就是饿死",
+      "死外边 从这儿跳下去",
+      "也不会吃你们一点东西",
+      "真香",
+    ]
+    tpl.output(subtitles, :mp4)
+    tpl.output(subtitles, :gif)
+  end
 end
