@@ -5,7 +5,7 @@ module ZhenXiang
 
   def self.start
     CLI::Parser.run
-		Web.start
+    Web.start
   end
 end
 
