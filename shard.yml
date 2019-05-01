@@ -15,6 +15,10 @@ license: MIT
 dependencies:
   crinja:
     github: straight-shoota/crinja
+  kemal:
+    github: kemalcr/kemal
+  admiral:
+    github: jwaldrip/admiral.cr
 
 development_dependencies:
   ameba:
