@@ -27,14 +27,15 @@ module ZhenXiang
       ass_path = "outputs/#{hash}.ass"
       File.write ass_path, ass_content, mode: "w"
       # 输出命令
-      args = case format
-             when :mp4
-               ["-i", @tpl_video, "-vf", "ass=#{ass_path}", "-an", "-y", "#{path}/#{hash}.mp4"]
-             when :gif
-               ["-i", @tpl_video, "-vf", "ass=#{ass_path},scale=300:-1", "-r", "8", "-y", "#{path}/#{hash}.gif"]
-             else
-               raise "unsupported output format: #{format}"
-             end
+      args =
+        case format
+        when :mp4
+          ["-i", @tpl_video, "-vf", "ass=#{ass_path}", "-an", "-y", "#{path}/#{hash}.mp4"]
+        when :gif
+          ["-i", @tpl_video, "-vf", "ass=#{ass_path},scale=300:-1", "-r", "8", "-y", "#{path}/#{hash}.gif"]
+        else
+          raise "unsupported output format: #{format}"
+        end
       Process.run("ffmpeg", args: args)
     end
   end

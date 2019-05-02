@@ -7,6 +7,10 @@ describe ZhenXiang do
     true.should eq(true)
   end
 
+  it "scanning" do
+    ZhenXiang.scanning "_res"
+  end
+
   it "generate demo" do
     tpl = ZhenXiang::Template.new "demo/template.mp4", "demo/template.ass"
     subtitles = [
