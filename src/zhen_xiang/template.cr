@@ -7,13 +7,15 @@ module ZhenXiang
     getter ass : String
     getter name : String
     getter path : String
+    getter subtitles : Array(String)
 
-    def initialize(video, ass, name)
+    def initialize(video, ass, name, subtitles)
       if File.exists?(video) && File.exists?(ass)
         @video = video
         @ass = File.read ass
         @name = name.strip
         @path = File.basename File.dirname(video)
+        @subtitles = subtitles
       else
         raise "created a template object that does not exist"
       end

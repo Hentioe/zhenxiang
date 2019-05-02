@@ -20,7 +20,10 @@ module ZhenXiang
   end
 
   def self.read_tpl(path)
-    Template.new "#{path}/template.mp4", "#{path}/template.ass", File.read "#{path}/METADATA"
+    metadata = File.read("#{path}/METADATA").split("\n:\n").map { |data| data.strip }
+    name = metadata[0]
+    subtitles = metadata[1].split("\n").map { |subtitle| subtitle.strip }
+    Template.new "#{path}/template.mp4", "#{path}/template.ass", name, subtitles
   end
 end
 
