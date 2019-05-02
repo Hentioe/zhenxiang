@@ -15,7 +15,7 @@ describe ZhenXiang do
       "也不会吃你们一点东西",
       "真香",
     ]
-    tpl.output(subtitles, :mp4)
-    tpl.output(subtitles, :gif)
+    tpl.output(subtitles, :mp4, "outputs")
+    tpl.output(subtitles, :gif, "outputs")
   end
 end

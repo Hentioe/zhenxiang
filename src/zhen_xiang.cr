@@ -9,4 +9,4 @@ module ZhenXiang
   end
 end
 
-ZhenXiang.start unless (ENV["POLICR_ENV"]? && (ENV["POLICR_ENV"] == "test"))
+ZhenXiang.start unless (ENV["ZHENXIANG_ENV"]? && (ENV["ZHENXIANG_ENV"] == "test"))

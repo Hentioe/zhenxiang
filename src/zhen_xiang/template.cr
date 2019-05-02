@@ -15,7 +15,7 @@ module ZhenXiang
       end
     end
 
-    def output(subtitles, format)
+    def output(subtitles, format, path)
       # 创建字幕模板
       env = Crinja.new
       template = env.from_string @tpl_ass
@@ -29,9 +29,9 @@ module ZhenXiang
       # 输出命令
       args = case format
              when :mp4
-               ["-i", @tpl_video, "-vf", "ass=#{ass_path}", "-an", "-y", "outputs/#{hash}.mp4"]
+               ["-i", @tpl_video, "-vf", "ass=#{ass_path}", "-an", "-y", "#{path}/#{hash}.mp4"]
              when :gif
-               ["-i", @tpl_video, "-vf", "ass=#{ass_path},scale=300:-1", "-r", "8", "-y", "outputs/#{hash}.gif"]
+               ["-i", @tpl_video, "-vf", "ass=#{ass_path},scale=300:-1", "-r", "8", "-y", "#{path}/#{hash}.gif"]
              else
                raise "unsupported output format: #{format}"
              end
