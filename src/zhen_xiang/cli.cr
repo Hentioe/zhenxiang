@@ -51,7 +51,7 @@ module ZhenXiang::CLI
       required: true
 
     define_flag output_path : String,
-      description: "Output file",
+      description: "Output directory",
       default: DEFAULT_OPATH,
       long: opath,
       short: o,

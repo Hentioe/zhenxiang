@@ -6,8 +6,7 @@ module ZhenXiang
   def self.start
     CLI::Parser.run
     config = CLI::Config.instance
-    scanning config.rpath
-    Web.start
+    Web.start scanning(config.rpath).map { |path| read_tpl path }
   end
 
   def self.scanning(rpath)
@@ -18,6 +17,10 @@ module ZhenXiang
         "#{dir}/METADATA",
       ].select { |path| File.exists? path }.size == 3
     end
+  end
+
+  def self.read_tpl(path)
+    Template.new "#{path}/template.mp4", "#{path}/template.ass", File.read "#{path}/METADATA"
   end
 end
 
