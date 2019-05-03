@@ -7,7 +7,7 @@ module ZhenXiang::Web
     public_folder "public"
 
     get "/" do
-      cur = tpls[0]
+      cur = find_template(tpls, "zhenxiang") || tpls[0]
       render "src/views/index.html.ecr", "src/views/layout.html.ecr"
     end
 
