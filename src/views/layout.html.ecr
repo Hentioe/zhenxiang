@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"
+    />
+    <title>死外边，从这儿跳下去，都不会吃你们一点东西！</title>
+    <link rel="stylesheet" href="/lib/bulma-0.7.4/bulma.min.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script defer src="/js/index.js"></script>
+    <script defer src="/lib/fontawesome-5.7.2/all.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <nav
+        class="navbar has-shadow is-fixed-top"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="logo.jpg" />
+            </a>
+
+            <a
+              role="button"
+              class="navbar-burger burger"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="/guide">
+                <span class="icon has-text-primary">
+                  <i class="fas fa-book-reader"></i>
+                </span>
+                <span>
+                  指南
+                </span>
+              </a>
+
+              <a class="navbar-item" href="#">
+                <span class="icon">
+                  <i class="fas fa-cloud-upload-alt" style="color:#2994C5"></i>
+                </span>
+                <span>
+                  上传
+                </span>
+              </a>
+
+              <a
+                class="navbar-item"
+                target="_blank"
+                href="https://github.com/Hentioe/zhen_xiang/issues"
+              >
+                <span class="icon">
+                  <i class="fas fa-info-circle" style="color:#1C9B5C;"></i>
+                </span>
+                <span>
+                  帮助
+                </span>
+              </a>
+
+              <a class="navbar-item" href="/api">
+                <span class="icon">
+                  <i class="fas fa-rss-square" style="color:#719B1C;"></i>
+                </span>
+                <span>
+                  接口
+                </span>
+              </a>
+            </div>
+
+            <div class="navbar-end">
+              <a
+                class="navbar-item"
+                href="https://github.com/Hentioe/zhen_xiang"
+                target="_blank"
+              >
+                <span class="icon" style="color: #333;">
+                  <i class="fab fa-lg fa-github-alt"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <%= content %>
+      </div>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>ZhenXiang</strong> by
+            <a href="https://github.com/Hentioe">Hentioe</a>. The source code is
+            licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            The website content is licensed
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+              >CC BY NC SA 4.0</a
+            >.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

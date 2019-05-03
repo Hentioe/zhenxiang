@@ -1,1 +1,53 @@
-Hello ZhenXiang!
+<section class="section">
+  <div class="columns">
+    <div class="column is-2">
+      <aside class="menu">
+        <p class="menu-label">
+          模板列表
+        </p>
+        <ul class="menu-list">
+          <% tpls.each do |tpl| %>
+          <li>
+            <a
+              href="/<%= tpl.path %>"
+              class='<%= cur == tpl ? "is-active" : nil %>'
+              ><%= tpl.name %></a
+            >
+          </li>
+          <% end %>
+        </ul>
+      </aside>
+    </div>
+    <div class="column is-10">
+      <div class="zx-preview">
+        <video autoplay width="350">
+          <source src="/template/<%= cur.path %>" />
+        </video>
+      </div>
+      <hr />
+      <div class="zx-subtitles">
+        <% cur.subtitles.each_with_index do |subtitle, i| %>
+        <div class="field">
+          <div class="field-label is-normal">
+            <label class="label">第 <%= i+1 %> 句</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="<%= subtitle %>"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <div class="control">
+          <button class="button is-primary">生成</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
