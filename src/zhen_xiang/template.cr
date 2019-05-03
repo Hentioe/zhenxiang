@@ -29,16 +29,22 @@ module ZhenXiang
       ass_content = template.render({"sentences" => subtitles})
       # 获取字幕内容 hash
       hash = Digest::MD5.hexdigest(ass_content)[0..8]
+      # 资源文件路径
+      ass_file = "#{path}/#{hash}.ass"
+      output_file = "#{path}/#{hash}.#{format}"
+      # 可能存在资源
+      if File.exists?(ass_file) && File.exists?(output_file)
+        return hash
+      end
       # 储存字幕模板
-      ass_path = "#{path}/#{hash}.ass"
-      File.write ass_path, ass_content, mode: "w"
+      File.write ass_file, ass_content, mode: "w"
       # 输出命令
       args =
         case format
         when :mp4
-          ["-i", @video, "-vf", "ass=#{ass_path}", "-an", "-y", "#{path}/#{hash}.mp4"]
+          ["-i", @video, "-vf", "ass=#{ass_file}", "-an", "-y", output_file]
         when :gif
-          ["-i", @video, "-vf", "ass=#{ass_path},scale=300:-1", "-r", "8", "-y", "#{path}/#{hash}.gif"]
+          ["-i", @video, "-vf", "ass=#{ass_file},scale=300:-1", "-r", "8", "-y", output_file]
         else
           raise "unsupported output format: #{format}"
         end
