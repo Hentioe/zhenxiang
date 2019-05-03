@@ -1,0 +1,23 @@
+clone:
+  git:
+    image: plugins/git
+    recursive: false
+
+pipeline:
+  test:
+    image: bluerain/zhenxiang:build
+    commands:
+      - shards --production
+      - ZHENXIANG_ENV=test crystal spec
+
+  build:
+    image: bluerain/zhenxiang:build
+    commands:
+      - shards build --release --progress --production
+
+  build-image:
+    image: docker
+    commands:
+      - docker build . -t bluerain/zhenxiang
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
