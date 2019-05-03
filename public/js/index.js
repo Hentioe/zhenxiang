@@ -21,11 +21,11 @@ function make(e) {
 }
 
 function updateVideo(hash) {
-  document.querySelector("video source").src = `/download/${hash}/mp4`;
+  document.querySelector("video source").src = `/download/${hash}.mp4`;
   document.querySelector("video").load();
   document.querySelector("#makeBtn").classList.remove("is-loading");
   document.querySelector("#makeResult1").innerHTML = `通过右键保存视频（MP4）`;
-  document.querySelector("#makeResult2").innerHTML = `点击<a target="_blank" href="/download/${hash}/gif">这里</a>下载动图（GIF）`
+  document.querySelector("#makeResult2").innerHTML = `点击<a target="_blank" href="/download/${hash}.gif">这里</a>下载动图（GIF）`
 }
 
 document.getElementById("makeBtn").addEventListener("click", make);

@@ -41,10 +41,9 @@ module ZhenXiang::Web
       end
     end
 
-    get "/download/:hash/:format" do |env|
-      hash = env.params.url["hash"]
-      format = env.params.url["format"]
-      send_file env, "#{config.opath}/#{hash}.#{format}"
+    get "/download/:filename" do |env|
+      filename = env.params.url["filename"]
+      send_file env, "#{config.opath}/#{filename}"
     end
 
     Kemal.config.env = "production" if config.prod
