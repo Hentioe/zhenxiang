@@ -8,7 +8,7 @@ pipeline:
     image: bluerain/zhenxiang:build
     commands:
       - shards --production
-      - ZHENXIANG_ENV=test crystal spec
+      # - ZHENXIANG_ENV=test crystal spec
 
   build:
     image: bluerain/zhenxiang:build

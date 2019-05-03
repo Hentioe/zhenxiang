@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+  server:
+    image: bluerain/zhenxiang
+    ports:
+      - 8085:8080
+    stdin_open: true
+    volumes:
+      - /data/zhenxiang/resources:/resources
+      - /data/zhenxiang/outputs:/outputs
+    restart: always
