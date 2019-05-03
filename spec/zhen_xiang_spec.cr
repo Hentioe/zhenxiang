@@ -15,12 +15,12 @@ describe ZhenXiang do
     tpl = ZhenXiang.read_tpl "_res/zhenxiang"
   end
 
-  it "generate demo" do
-    tpl = ZhenXiang::Template.new "demo/template.mp4", "demo/template.ass", "王境泽", [] of String
+  it "make" do
+    tpl = ZhenXiang::Template.new "_res/zhenxiang/template.mp4", "_res/zhenxiang/template.ass", "王境泽", [] of String
     subtitles = [
       "我王竞泽就是饿死",
       "死外边 从这儿跳下去",
-      "也不会吃你们一点东西",
+      "不会吃你们一点东西",
       "真香",
     ]
     tpl.output(subtitles, :mp4, "outputs")
