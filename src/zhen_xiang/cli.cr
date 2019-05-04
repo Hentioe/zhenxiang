@@ -44,14 +44,14 @@ module ZhenXiang::CLI
       required: true
 
     define_flag resources_path : String,
-      description: "Resource directory",
+      description: "Resources directory",
       default: DEFAULT_RPATH,
       long: rpath,
       short: r,
       required: true
 
     define_flag output_path : String,
-      description: "Output directory",
+      description: "Outputs directory",
       default: DEFAULT_OPATH,
       long: opath,
       short: o,

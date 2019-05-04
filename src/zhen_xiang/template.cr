@@ -48,8 +48,7 @@ module ZhenXiang
         else
           raise "unsupported output format: #{format}"
         end
-      Process.run("ffmpeg", args: args)
-      hash
+      return hash if Process.run("ffmpeg", args: args).success?
     end
   end
 end
